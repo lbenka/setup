@@ -1,11 +1,12 @@
 # New mac setup
 
-## Install brew:
+just run
 
 ```bash
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+./start_here.sh
 ```
 
-## Install everything from [`~/Brewfile`](home/Brewfile)
+## Thanks to
 
-`brew bundle` **Just wait & enter password when prompted.**
+[mathiasbynens](https://github.com/mathiasbynens/dotfiles/)
+[strajk](https://github.com/Strajk/setup/)

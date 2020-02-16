@@ -1,0 +1,9 @@
+[user]
+	name = Lukas Benka
+	email = lukas.benka@kiwi.com
+[core]
+    excludesfile = ~/.gitignore_global
+[commit]
+	gpgsing = true
+[rebase]
+	autosquash = true
