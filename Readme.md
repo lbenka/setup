@@ -9,4 +9,5 @@ just run
 ## Thanks to
 
 [mathiasbynens](https://github.com/mathiasbynens/dotfiles/)
+
 [strajk](https://github.com/Strajk/setup/)

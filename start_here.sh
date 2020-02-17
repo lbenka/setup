@@ -122,3 +122,12 @@ for app in \
 done
 
 killall Dock
+
+# New machine - new ssh key
+eval "$(ssh-agent -s)"
+
+ln -s $HOME/setup/home/ssh_config $HOME/.ssh/config
+
+ssh-keygen -t rsa -b 4096 -C "benka.lukas@gmail.com"
+
+ssh-add -K ~/.ssh/id_rsa
