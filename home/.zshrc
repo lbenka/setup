@@ -1,6 +1,6 @@
 # Secrets
 # ---
-source $HOME/.secrets
+#source $HOME/.secrets
 
 export ZSH=$HOME/.oh-my-zsh
 
@@ -27,7 +27,7 @@ export LC_ALL=en_US.UTF-8
 
 alias 3="python3.8"
 alias upy="screen /dev/tty.SLAB_USBtoUART 115200"
-alias vpn="sudo openfortivpn -c /etc/openfortivpn/my-config"
+alias vpn="sudo openfortivpn -c /etc/forti.conf"
 
 # Adjust PATH
 # ---
@@ -43,3 +43,6 @@ export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
 autoload -U promptinit; promptinit
 
 prompt spaceship
+export PATH="/usr/local/opt/python@3.8/bin:$PATH"
+
+alias lift="$HOME/Code/liftago_gmail_count/venv/bin/python $HOME/Code/liftago_gmail_count/liftago.py"

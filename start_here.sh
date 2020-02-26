@@ -7,11 +7,11 @@ brew bundle
 # install oh my zshell
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 # link zshell dotfile
-rm -f "$HOME/.zshrc" && ln -s "$HOME/setup/home/.zshrc" $HOME && source $HOME/.zshrc
+rm -f "$HOME/.zshrc" && ln -s "$HOME/Code/setup/home/.zshrc" $HOME && source $HOME/.zshrc
 
-# link .dotfiles 
-ln -s $HOME/setup/home/.gitconfig $HOME/.gitconfig
-ln -s $HOME/setup/home/.gitignore_global $HOME/.gitignore_global
+# link .dotfiles
+ln -s $HOME/Code/setup/home/.gitconfig $HOME/.gitconfig
+ln -s $HOME/Code/setup/home/.gitignore_global $HOME/.gitignore_global
 
 # setup nvm
 nvm ls-remote | tail
@@ -83,7 +83,7 @@ defaults write com.apple.finder WarnOnEmptyTrash -bool false
 defaults write com.apple.dashboard mcx-disabled -boolean true
 
 # Disable the crash reporter
-defaults write com.apple.CrashReporter DialogType -string "none" 
+defaults write com.apple.CrashReporter DialogType -string "none"
 
 # Require password immediately after sleep or screen saver begins
 defaults write com.apple.screensaver askForPassword -int 1
