@@ -6,13 +6,16 @@ brew bundle
 
 # install oh my zshell
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-# link zshell dotfile
-rm -f "$HOME/.zshrc" && ln -s "$HOME/Code/setup/home/.zshrc" $HOME && source $HOME/.zshrc
+
+#link .zshrc
+rm -f "$HOME/.zshrc" && ln -s "$HOME/Code/setup/home/.zshrc" $HOME && source "$HOME/.zshrc"
 
 # link .dotfiles
+echo "linking dotfiles"
 ln -s $HOME/Code/setup/home/.gitconfig $HOME/.gitconfig
 ln -s $HOME/Code/setup/home/.gitignore_global $HOME/.gitignore_global
 
+echo "install nvm"
 # setup nvm
 nvm ls-remote | tail
 
@@ -92,12 +95,24 @@ defaults write com.apple.screensaver askForPasswordDelay -int 0
 # Sleep the display after 5 minutes
 sudo pmset -a displaysleep 5
 
+# Show battery percentage
+defaults write com.apple.menuextra.battery ShowPercent YES
+killall SystemUIServer
 
 # Customize dock
 # ---
 
 # Set the icon size of Dock items to 45 pixels
 defaults write com.apple.dock tilesize -int 45
+
+#Autohide Dock
+defaults write com.apple.dock autohide -boolean true
+
+# Minimalize effect scale
+defaults write com.apple.dock mineffect -string scale
+
+# Show indicators
+defaults write com.apple.dock show-process-indicators -bool true
 
 # Don’t show recent applications in Dock
 defaults write com.apple.dock show-recents -bool false
@@ -108,6 +123,7 @@ for app in \
   "/System/Applications/Calendar.app" \
   "/Applications/Google Chrome.app" \
   "/Applications/Firefox.app" \
+  "/Applications/Slack.app" \
   "/Applications/1Password 7.app" \
   "/Applications/Spotify.app" \
   "/Applications/iTerm.app" \
@@ -126,8 +142,12 @@ killall Dock
 # New machine - new ssh key
 eval "$(ssh-agent -s)"
 
-ln -s $HOME/setup/home/ssh_config $HOME/.ssh/config
+ln -s $HOME/Code/setup/home/ssh_config $HOME/.ssh/config
 
 ssh-keygen -t rsa -b 4096 -C "benka.lukas@gmail.com"
 
 ssh-add -K ~/.ssh/id_rsa
+
+# activate shell
+source "$HOME/.zshrc"
+

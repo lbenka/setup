@@ -4,6 +4,12 @@ just run
 
 ```bash
 ./start_here.sh
+
+# in case of problems run
+sudo xcodebuild -license accept
+
+# and repeat
+./start_here.sh
 ```
 
 ## Thanks to
