@@ -139,6 +139,9 @@ done
 
 killall Dock
 
+# set DNS servers
+networksetup -setdnsservers Wi-Fi 8.8.8.8 1.1.1.1
+
 # New machine - new ssh key
 eval "$(ssh-agent -s)"
 
