@@ -29,6 +29,7 @@ brew "redis"
 brew "python3"
 brew "python@3.8"
 brew "pylint"
+brew "pre-commit"
 
 # Apps
 # ===
