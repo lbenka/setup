@@ -142,6 +142,9 @@ killall Dock
 # set DNS servers
 networksetup -setdnsservers Wi-Fi 8.8.8.8 1.1.1.1
 
+# install pip tools
+pip3 install pip-tools
+
 # New machine - new ssh key
 eval "$(ssh-agent -s)"
 
