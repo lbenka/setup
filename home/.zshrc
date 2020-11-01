@@ -20,7 +20,7 @@ plugins=(git github brew osx git-extras tig docker)
 # ---
 source $ZSH/oh-my-zsh.sh
 source $(brew --prefix nvm)/nvm.sh
-alias brewup="brew update; brew upgrade; brew prune; brew cleanup; brew doctor"
+alias brewup="brew update; brew upgrade; brew cleanup; brew doctor"
 
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -46,3 +46,9 @@ prompt spaceship
 export PATH="/usr/local/opt/python@3.8/bin:$PATH"
 
 alias lift="$HOME/Code/liftago_gmail_count/venv/bin/python $HOME/Code/liftago_gmail_count/liftago.py"
+alias drm_all="docker rm $(docker ps -a -q)"
+
+eval $(thefuck --alias)
+
+# dji mavic air to google photos timestamp fix
+alias exif_fix='exiftool "-MediaCreateDate<filemodifydate" "-MediaModifyDate<filemodifydate" "-TrackCreateDate<filemodifydate" "-TrackModifyDate<filemodifydate" "-CreateDate<filemodifydate" "-ModifyDate<filemodifydate" -tagsfromfile @ -mditemfscreationdate -overwrite_original -P -r . -ext .mp4' 

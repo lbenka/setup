@@ -70,3 +70,8 @@ cask "font-roboto"
 cask "font-hack"
 cask "font-roboto-mono"
 cask "font-source-code-pro"
+
+# Tools 
+# ===
+brew exiftool
+
