@@ -6,10 +6,10 @@ tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "heroku/brew"
+tab "teamookla/speedtest"
 
 # Essentials
 # ===
-
 brew "mas"
 
 brew "git-extras"
@@ -24,10 +24,11 @@ cask "macmediakeyforwarder"
 cask "scroll-reverser"
 cask "iterm2"
 
+brew "svn"
 brew "nvm"
 brew "redis"
 brew "python3"
-brew "python@3.8"
+brew "python@3.10"
 brew "pylint"
 brew "pre-commit"
 brew "black"
@@ -35,7 +36,7 @@ brew "black"
 # plantuml
 # ===
 
-"cask" java
+brew "openjdk"
 brew "graphviz"
 
 # Apps
@@ -46,6 +47,7 @@ cask "ngrok"
 cask "keybase"
 cask "1password"
 cask "slack"
+cask "signal"
 cask "transmission"
 cask "google-chrome"
 cask "firefox"
@@ -64,6 +66,7 @@ mas "Affinity Photo", id: 824183456
 
 # Fonts 
 # ===
+brew "svn" # requirement for fonts 
 cask "font-open-sans"
 cask "font-roboto"
 
@@ -73,5 +76,6 @@ cask "font-source-code-pro"
 
 # Tools 
 # ===
-brew exiftool
-
+brew "exiftool"
+brew "speedtest"
+brew "android-file-transfer"

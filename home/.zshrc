@@ -14,7 +14,7 @@ export HH_CONFIG=hicolor
 
 # Plugins
 # ---
-plugins=(git github brew osx git-extras tig docker)
+plugins=(git github brew macos git-extras tig docker)
 
 # Action!
 # ---
@@ -25,7 +25,7 @@ alias brewup="brew update; brew upgrade; brew cleanup; brew doctor"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-alias 3="python3.8"
+alias 3="python3.9"
 alias upy="screen /dev/tty.SLAB_USBtoUART 115200"
 alias vpn="sudo openfortivpn -c /etc/forti.conf"
 

@@ -7,6 +7,9 @@ brew bundle
 # install oh my zshell
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
+# mkfile for secrets 
+touch $HOME/.secrets
+
 #link .zshrc
 rm -f "$HOME/.zshrc" && ln -s "$HOME/Code/setup/home/.zshrc" $HOME && source "$HOME/.zshrc"
 

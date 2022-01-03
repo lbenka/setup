@@ -1,7 +1,3 @@
-Host gitlab.skypicker*
-   AddKeysToAgent yes
-   UseKeychain yes
-   IdentityFile ~/.ssh/kiwi_rsa
 Host *
   AddKeysToAgent yes
   UseKeychain yes
