@@ -1,38 +1,40 @@
-# get brew
+echo "get brew"
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# activate brew 
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# install brew bundle
+echo "install brew bundle"
 brew bundle
 
-# install oh my zshell
+echo "install oh my zshell"
+rm -rf $HOME/.oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-# mkfile for secrets 
+echo "mkfile for secrets" 
 touch $HOME/.secrets
 
-#link .zshrc
+echo "link .zshrc"
 rm -f "$HOME/.zshrc" && ln -s "$HOME/Code/setup/home/.zshrc" $HOME && source "$HOME/.zshrc"
 
-# link .dotfiles
 echo "linking dotfiles"
 ln -s $HOME/Code/setup/home/.gitconfig $HOME/.gitconfig
 ln -s $HOME/Code/setup/home/.gitignore_global $HOME/.gitignore_global
 
-echo "install nvm"
-# setup nvm
+echo "setup nvm"
 nvm ls-remote | tail
 
-# Install it (it should use it & set as default automatically)
-nvm install v12.4.0
+# # Install it (it should use it & set as default automatically)
+# nvm install v12.4.0
 
 # Make sure
 nvm list
 nvm current
 
-# setup shell visuals and activate
-npm i -g spaceship-prompt
+# echo "setup shell visuals and activate"
+git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
-# adjust vim
+echo "adjust vim"
 git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
 sh ~/.vim_runtime/install_basic_vimrc.sh
 
@@ -109,7 +111,7 @@ killall SystemUIServer
 defaults write com.apple.dock tilesize -int 45
 
 #Autohide Dock
-defaults write com.apple.dock autohide -boolean true
+# defaults write com.apple.dock autohide -boolean true
 
 # Minimalize effect scale
 defaults write com.apple.dock mineffect -string scale

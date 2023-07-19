@@ -6,7 +6,12 @@ tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "heroku/brew"
-tab "teamookla/speedtest"
+tap "teamookla/speedtest"
+
+# shell
+# ===
+
+brew "spaceship"
 
 # Essentials
 # ===
@@ -42,9 +47,12 @@ brew "graphviz"
 # Apps
 # ===
 
-cask "docker"
+# under license usually 
+# cask "docker"
+# alternative
+brew "podman"
+
 cask "ngrok"
-cask "keybase"
 cask "1password"
 cask "slack"
 cask "signal"
@@ -78,4 +86,4 @@ cask "font-source-code-pro"
 # ===
 brew "exiftool"
 brew "speedtest"
-brew "android-file-transfer"
+cask "android-file-transfer"
