@@ -1,9 +1,20 @@
+# https://blog.dbrgn.ch/2021/11/16/git-ssh-signatures/ 
 [user]
 	name = Lukas Benka
-	email = benka.lukas@gmail.com
+  email = benka.lukas@gmail.com
+  signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDGvhwZiLmGxh8+gyQ1MWzoIcI/gJjwlz5bsCa313C26wWmgdAac+gY3bV0ZrkRTknbxA97p1CGLZhQ0Jm2dzbLXsrksyeBOn0Ft/aJ1fHzsqrcWNAu1FZUnZJ/EVYt7NHqlQ4HoBxdlB9yhIx3+kJYBjbI+zDezfD8dMOa/V5lksL+Fplzx0z4YXTIKgjPNp3AEiVbs+UBmgtMo7SN2YnwlsmNE/HxpShrsykgVth6zKY1SL8DGOEAsSb3TD0FbUBG3wStY8o9hYBX+kTMdz6WrFWifECuErvjTj5KM/O9TDw/ab8vfJEe8FJkgXsR5ApeFr+C4cxkSnJ7ZFh4WQB1TTZmay2tM/o/ZEUSIN+ThglH6P1cy/b8m730G/ScZ0OMXw3fhfYcVdjxKnr4SDW1jAA6nK4Rfi5UPYK+m1NRldNQHZYsszOVmS8MVpVIWi+NHsByIhA+s5m5R0Pb2fd4pUqUohdamaV5hmGh+8teJXrCmSohlqKXhShR83OGXDH/2KLxCP+IKltmmYQIJmv8SY9PgbhqJebXdq7u/XACsZ5uQNnYy/dLeY35Au1HMYwTsHO0psvJk13istvDo+S7Iz+v9aNWCqL8apXkwJPIjVok6KOZ7xSCPhyPZkQYjNtg9A9F25QaQfHeAUucO8F2n9ZbyXnPk1eLXC9TRaBQ9w==
+
 [core]
-    excludesfile = ~/.gitignore_global
+  excludesfile = ~/.gitignore_global
+
 [commit]
 	gpgsing = true
+
 [rebase]
-	autosquash = true
+  autosquash = true
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
