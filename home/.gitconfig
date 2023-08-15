@@ -1,4 +1,5 @@
 # https://blog.dbrgn.ch/2021/11/16/git-ssh-signatures/ 
+# https://developer.1password.com/docs/ssh/git-commit-signing 
 [user]
 	name = Lukas Benka
   email = benka.lukas@gmail.com
