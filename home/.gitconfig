@@ -9,7 +9,7 @@
   excludesfile = ~/.gitignore_global
 
 [commit]
-	gpgsing = true
+  gpgsign = true
 
 [rebase]
   autosquash = true
