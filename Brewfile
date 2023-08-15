@@ -10,13 +10,13 @@ tap "teamookla/speedtest"
 
 # shell
 # ===
-
 brew "spaceship"
 
 # Essentials
 # ===
 brew "mas"
 
+brew "git"
 brew "git-extras"
 brew "htop"
 brew "thefuck"
@@ -32,8 +32,9 @@ cask "iterm2"
 brew "svn"
 brew "nvm"
 brew "redis"
-brew "python3"
+brew "python3"  # 3.11 or latest
 brew "python@3.10"
+brew "poetry"
 brew "pylint"
 brew "pre-commit"
 brew "black"
@@ -50,10 +51,17 @@ brew "graphviz"
 # under license usually 
 # cask "docker"
 # alternative
-brew "podman"
+#brew "podman"
 
+cask "rancher"
+brew "kubectl"
+brew "helm"
+brew "buildah"
+
+brew "1password-cli"
 cask "ngrok"
 cask "1password"
+mas "1password-for-safari", id: 1569813296
 cask "slack"
 cask "signal"
 cask "transmission"
