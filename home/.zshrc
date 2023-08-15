@@ -3,14 +3,15 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # prompt spaceship
 # https://spaceship-prompt.sh/
-ZSH_THEME="spaceship"
+#ZSH_THEME="spaceship"
+source "/opt/homebrew/opt/spaceship/spaceship.zsh"
 SPACESHIP_TIME_SHOW=true
 SPACESHIP_DOCKER_SHOW=false
 SPACESHIP_KUBECTL_SHOW=true
 SPACESHIP_KUBECTL_CONTEXT_SHOW=true
 
 # podman 
-alias docker=podman
+# alias docker=podman
 
 # Secrets
 # ---
@@ -53,9 +54,6 @@ export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
 
-export PATH="/usr/local/opt/python@3.8/bin:$PATH"
-
-alias lift="$HOME/Code/liftago_gmail_count/venv/bin/python $HOME/Code/liftago_gmail_count/liftago.py"
 alias drm_all="docker rm $(docker ps -a -q)"
 
 eval $(thefuck --alias)
