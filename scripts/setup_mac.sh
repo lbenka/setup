@@ -1,43 +1,3 @@
-echo "get brew"
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-# activate brew 
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
-echo "install brew bundle"
-brew bundle
-
-echo "install oh my zshell"
-rm -rf $HOME/.oh-my-zsh
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-echo "mkfile for secrets" 
-touch $HOME/.secrets
-
-echo "link .zshrc"
-rm -f "$HOME/.zshrc" && ln -s "$HOME/Code/setup/home/.zshrc" $HOME && source "$HOME/.zshrc"
-
-echo "linking dotfiles"
-ln -s $HOME/Code/setup/home/.gitconfig $HOME/.gitconfig
-ln -s $HOME/Code/setup/home/.gitignore_global $HOME/.gitignore_global
-
-echo "setup nvm"
-nvm ls-remote | tail
-
-# # Install it (it should use it & set as default automatically)
-# nvm install v12.4.0
-
-# Make sure
-nvm list
-nvm current
-
-# echo "setup shell visuals and activate"
-git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
-ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
-
-echo "adjust vim"
-git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
-sh ~/.vim_runtime/install_basic_vimrc.sh
-
 # Close any open System Preferences panes, to prevent them from overriding settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
 
@@ -55,7 +15,6 @@ defaults write com.apple.screencapture location -string "$HOME/Desktop"
 
 # Disable shadow in screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
-
 
 # Default folder to $HOME
 defaults write com.apple.finder NewWindowTarget -string "PfHm"
@@ -127,8 +86,6 @@ for app in \
   "/System/Library/CoreServices/Finder.app" \
   "/System/Applications/Calendar.app" \
   "/Applications/Google Chrome.app" \
-  "/Applications/Firefox.app" \
-  "/Applications/Slack.app" \
   "/Applications/1Password 7.app" \
   "/Applications/Spotify.app" \
   "/Applications/iTerm.app" \
@@ -145,19 +102,10 @@ done
 killall Dock
 
 # set DNS servers
-networksetup -setdnsservers Wi-Fi 8.8.8.8 1.1.1.1
+networksetup -setdnsservers Wi-Fi 1.1.1.1 8.8.8.8
 
 # install pip tools
 pip3 install pip-tools
-
-# New machine - new ssh key
-eval "$(ssh-agent -s)"
-
-ln -s $HOME/Code/setup/home/ssh_config $HOME/.ssh/config
-
-ssh-keygen -t rsa -b 4096 -C "benka.lukas@gmail.com"
-
-ssh-add -K ~/.ssh/id_rsa
 
 # activate shell
 source "$HOME/.zshrc"

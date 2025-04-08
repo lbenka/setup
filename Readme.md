@@ -3,14 +3,30 @@
 just run
 
 ```bash
-./start_here.sh
+mkdir $HOME/code 
+git clone git@github.com:lbenka/setup.git
+
+./install_all.sh
+source "$HOME/.zshrc"
 
 # in case of problems run
 sudo xcodebuild -license accept
 
 # and repeat
-./start_here.sh
+zsh ./setup_mac.sh
+source "$HOME/.zshrc"
 ```
+
+## shell
+
+powered by awesome [spaceship project](https://spaceship-prompt.sh/)
+
+next update you iTerm profile just by loading [profile](./iterm_profile.json) into iTerm
+when in doubt check out [this guide](https://blog.larsbehrenberg.com/the-definitive-iterm2-and-oh-my-zsh-setup-on-macos)
+
+## vscode
+
+just login everything is synced via github
 
 ## Thanks to
 
