@@ -3,6 +3,9 @@
 just run
 
 ```bash
+mkdir $HOME/code 
+git clone git@github.com:lbenka/setup.git
+
 ./install_all.sh
 source "$HOME/.zshrc"
 
@@ -18,7 +21,7 @@ source "$HOME/.zshrc"
 
 powered by awesome [spaceship project](https://spaceship-prompt.sh/)
 
-next update you iterm profile just by loading [profile](./iterm_profile.json) into iTerm
+next update you iTerm profile just by loading [profile](./iterm_profile.json) into iTerm
 when in doubt check out [this guide](https://blog.larsbehrenberg.com/the-definitive-iterm2-and-oh-my-zsh-setup-on-macos)
 
 ## vscode
