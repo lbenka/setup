@@ -81,6 +81,9 @@ defaults write com.apple.dock show-process-indicators -bool true
 # Don’t show recent applications in Dock
 defaults write com.apple.dock show-recents -bool false
 
+# scroll in iterm
+defaults write com.googlecode.iterm2 AlternateMouseScroll -bool true
+
 defaults write com.apple.dock persistent-apps -array
 for app in \
   "/System/Library/CoreServices/Finder.app" \
