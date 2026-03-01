@@ -87,10 +87,4 @@ export CPPFLAGS="-I$(brew --prefix openssl)/include"
 # dji mavic air to google photos timestamp fix
 alias exif_fix='exiftool "-MediaCreateDate<filemodifydate" "-MediaModifyDate<filemodifydate" "-TrackCreateDate<filemodifydate" "-TrackModifyDate<filemodifydate" "-CreateDate<filemodifydate" "-ModifyDate<filemodifydate" -tagsfromfile @ -mditemfscreationdate -overwrite_original -P -r . -ext .mp4' 
 
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/lukasbenka/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
-
-# Created by `pipx` on 2023-12-12 07:47:32
-export PATH="$PATH:/Users/lukasbenka/.local/bin"
 export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"

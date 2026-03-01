@@ -1,5 +1,17 @@
-# Close any open System Preferences panes, to prevent them from overriding settings we’re about to change
-osascript -e 'tell application "System Preferences" to quit'
+#!/bin/bash
+# macOS system defaults configuration
+# This script is idempotent—safe to re-run multiple times
+
+set -euo pipefail
+
+# Detect architecture
+ARCH=$(arch)
+echo "Running on $ARCH architecture"
+
+# Close any open System Preferences panes, to prevent them from overriding settings we're about to change
+if command -v osascript &> /dev/null; then
+  osascript -e 'tell application "System Preferences" to quit'
+fi
 
 # Disable the “Are you sure you want to open this application?” dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
@@ -57,14 +69,19 @@ defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 # Sleep the display after 5 minutes
-sudo pmset -a displaysleep 5
+if command -v pmset &> /dev/null; then
+  sudo pmset -a displaysleep 5
+fi
 
 # Show battery percentage
 defaults write com.apple.menuextra.battery ShowPercent YES
-killall SystemUIServer
+if command -v killall &> /dev/null; then
+  killall SystemUIServer 2>/dev/null || true
+fi
 
 # Customize dock
 # ---
+# To skip dock customization, comment out this section
 
 # Set the icon size of Dock items to 45 pixels
 defaults write com.apple.dock tilesize -int 45
@@ -89,7 +106,6 @@ for app in \
   "/System/Library/CoreServices/Finder.app" \
   "/System/Applications/Calendar.app" \
   "/Applications/Google Chrome.app" \
-  "/Applications/1Password 7.app" \
   "/Applications/Spotify.app" \
   "/Applications/iTerm.app" \
   "/Applications/Visual Studio Code.app" \
@@ -104,11 +120,11 @@ done
 
 killall Dock
 
-# set DNS servers
-networksetup -setdnsservers Wi-Fi 1.1.1.1 8.8.8.8
+# # set DNS servers
+# networksetup -setdnsservers Wi-Fi 1.1.1.1 8.8.8.8
 
-# install pip tools
-pip3 install pip-tools
+# # install pip tools
+# pip3 install pip-tools
 
 # activate shell
 source "$HOME/.zshrc"

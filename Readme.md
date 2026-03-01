@@ -1,32 +1,26 @@
-# New mac setup
-
-just run
+# New Mac Setup
 
 ```bash
-mkdir $HOME/code 
-git clone git@github.com:lbenka/setup.git
-
-./install_all.sh
+git clone git@github.com:lbenka/setup.git && cd setup
+bash ./scripts/install_all.sh
 source "$HOME/.zshrc"
-
-# in case of problems run
-sudo xcodebuild -license accept
-
-# and repeat
-zsh ./setup_mac.sh
-source "$HOME/.zshrc"
+bash ./scripts/setup_mac.sh  # optional: sets macOS defaults
 ```
 
-## shell
+Edit `Brewfile` before running to customize packages. Add secrets to `~/.secrets`.
 
-powered by awesome [spaceship project](https://spaceship-prompt.sh/)
+## Scripts
 
-next update you iTerm profile just by loading [profile](./iterm_profile.json) into iTerm
-when in doubt check out [this guide](https://blog.larsbehrenberg.com/the-definitive-iterm2-and-oh-my-zsh-setup-on-macos)
+- `install_all.sh` — Homebrew, packages, Oh My Zsh, dotfiles
+- `setup_mac.sh` — macOS system defaults (Finder, Dock, security)
 
-## vscode
+## Config
 
-just login everything is synced via github
+- `Brewfile` — Packages to install
+- `home/.zshrc` — Shell config (aliases, PATH, Spaceship prompt)
+- `iterm_profile.json` — iTerm2 theme
+
+Load iTerm profile via iTerm UI. VS Code syncs via GitHub.
 
 ## Thanks to
 
