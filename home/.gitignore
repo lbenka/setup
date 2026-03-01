@@ -1,0 +1,16 @@
+# Secrets and environment
+.secrets
+.env
+.env.local
+
+# Vim / Editor temp files
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OS
+Thumbs.db
+
+# Local logs
+*.log
